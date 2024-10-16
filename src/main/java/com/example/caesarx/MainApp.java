@@ -6,12 +6,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("caesar_cipher.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("caesar_cipher.fxml"));
+        Parent root = loader.load();
+
+        CaesarCipherController controller = loader.getController();
+        controller.setStage(primaryStage);
+
         primaryStage.setTitle("CaesarX");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

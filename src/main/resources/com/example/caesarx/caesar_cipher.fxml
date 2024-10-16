@@ -1,50 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.RadioButton?>
 
 <VBox spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.caesarx.CaesarCipherController">
     <children>
-    <ComboBox fx:id="languageSelector"/>
+        <TabPane>
+            <Tab text="Шифрование">
+                <content>
+                    <VBox spacing="10">
+                        <Label text="Введите текст для шифрования:"/>
+                        <TextArea fx:id="inputTextEncrypt" />
 
-        <Label text="Введите текст для шифрования/расшифровки:"/>
-        <TextArea fx:id="inputText" />
+                        <Label text="Выберите ключ шифрования:"/>
+                        <ComboBox fx:id="shiftKeyEncrypt" />
 
-        <Label text="Введите ключ шифрования:"/>
-        <TextField fx:id="shiftKey" />
+                        <HBox spacing="10">
+                            <Button text="Зашифровать" onAction="#encryptText"/>
+                        </HBox>
 
-        <HBox spacing="10">
-            <Button text="Зашифровать" onAction="#encryptText"/>
-            <Button text="Расшифровать" onAction="#decryptText"/>
-        </HBox>
+                        <Label text="Результат:"/>
+                        <TextArea fx:id="resultTextEncrypt" editable="false"/>
 
-        <Separator/>
+                        <Separator/>
 
-        <!-- Поля для файловой обработки -->
-        <Label text="Введите путь к входному файлу:"/>
-        <TextField fx:id="inputFilePath"/>
+                        <Label text="Выберите входной файл для шифрования:"/>
+                        <HBox spacing="10">
+                            <TextField fx:id="inputFilePathEncrypt"/>
+                            <Button text="..." onAction="#chooseInputFileEncrypt"/>
+                        </HBox>
 
-        <Label text="Введите путь к выходному файлу:"/>
-        <TextField fx:id="outputFilePath"/>
+                        <Label text="Выберите выходной файл для шифрования:"/>
+                        <HBox spacing="10">
+                            <TextField fx:id="outputFilePathEncrypt"/>
+                            <Button text="..." onAction="#chooseOutputFileEncrypt"/>
+                        </HBox>
 
-        <HBox spacing="10">
-            <Button text="Зашифровать файл" onAction="#encryptFile"/>
-            <Button text="Расшифровать файл" onAction="#decryptFile"/>
-        </HBox>
+                        <Button text="Зашифровать файл" onAction="#encryptFile"/>
 
-        <Label text="Результат:"/>
-        <TextArea fx:id="resultText" editable="false"/>
+                        <Separator/>
+
+                        <Label text="Выберите язык:"/>
+                        <ComboBox fx:id="languageSelectorEncrypt" onAction="#updateShiftKeyEncrypt"/>
+                    </VBox>
+                </content>
+            </Tab>
+
+            <Tab text="Дешифровка">
+                <content>
+                    <VBox spacing="10">
+                        <Label text="Введите текст для дешифровки:"/>
+                        <TextArea fx:id="inputTextDecrypt" />
+
+                        <HBox spacing="10">
+                            <Label text="Знаете ли вы ключ для расшифровки?" />
+
+                            <RadioButton fx:id="knownKeyOption" text="Да" selected="true" toggleGroup="$toggleGroup"/>
+                            <RadioButton fx:id="bruteForceOption" text="Нет" toggleGroup="$toggleGroup"/>
+                        </HBox>
+
+                        <ComboBox fx:id="shiftKeyDecrypt" />
+
+                        <Button text="Расшифровать" onAction="#decryptText" />
+
+                        <Label text="Результат:"/>
+                        <TextArea fx:id="resultTextDecrypt" editable="false"/>
+
+                        <Separator/>
+
+                        <Label text="Выберите входной файл для дешифровки:"/>
+                        <HBox spacing="10">
+                            <TextField fx:id="inputFilePathDecrypt"/>
+                            <Button text="..." onAction="#chooseInputFileDecrypt"/>
+                        </HBox>
+
+                        <Label text="Выберите выходной файл для дешифровки:"/>
+                        <HBox spacing="10">
+                            <TextField fx:id="outputFilePathDecrypt"/>
+                            <Button text="..." onAction="#chooseOutputFileDecrypt"/>
+                        </HBox>
+
+                        <Button text="Расшифровать файл" onAction="#decryptFile"/>
+
+                        <Separator/>
+
+                        <Label text="Выберите язык:"/>
+                        <ComboBox fx:id="languageSelectorDecrypt" onAction="#updateShiftKeyDecrypt"/>
+                    </VBox>
+                </content>
+            </Tab>
+        </TabPane>
     </children>
 </VBox>
-
