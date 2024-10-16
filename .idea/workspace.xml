@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47e79af6-962a-4fe7-82b6-074e7c975cde" name="Changes" comment="super commit">
+    <list default="true" id="47e79af6-962a-4fe7-82b6-074e7c975cde" name="Changes" comment="super turbo commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/caesarx/CaesarCipherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/caesarx/CaesarCipherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/caesarx/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/caesarx/MainApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/caesarx/caesar_cipher.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/caesarx/caesar_cipher.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,11 +84,20 @@
       <option name="project" value="LOCAL" />
       <updated>1728490351235</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="super turbo commit">
+      <option name="closed" value="true" />
+      <created>1729069193579</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1729069193579</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="super commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="super commit" />
+    <MESSAGE value="super turbo commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="super turbo commit" />
   </component>
 </project>

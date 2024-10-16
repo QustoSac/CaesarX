@@ -191,14 +191,44 @@ public class CaesarCipherController {
     }
 
     @FXML
-    public void chooseInputFileEncrypt() { /*...*/ }
+    public void chooseInputFileEncrypt() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Выберите входной файл");
+        File file = fileChooser.showOpenDialog(stage);
+        if (file != null) {
+            inputFilePathEncrypt.setText(file.getAbsolutePath());
+        }
+    }
+
 
     @FXML
-    public void chooseOutputFileEncrypt() { /*...*/ }
+    public void chooseOutputFileEncrypt() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Выберите выходной файл");
+        File file = fileChooser.showSaveDialog(stage);
+        if (file != null) {
+            outputFilePathEncrypt.setText(file.getAbsolutePath());
+        }
+    }
+
 
     @FXML
-    public void chooseInputFileDecrypt() { /*...*/ }
+    public void chooseInputFileDecrypt() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Выберите входной файл");
+        File file = fileChooser.showOpenDialog(stage);
+        if (file != null) {
+            inputFilePathDecrypt.setText(file.getAbsolutePath());
+        }
+    }
 
     @FXML
-    public void chooseOutputFileDecrypt() { /*...*/ }
+    public void chooseOutputFileDecrypt() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Выберите выходной файл");
+        File file = fileChooser.showSaveDialog(stage);
+        if (file != null) {
+            outputFilePathDecrypt.setText(file.getAbsolutePath());
+        }
+    }
 }
